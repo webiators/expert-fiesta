@@ -1,0 +1,86 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ *
+ * @category   Webiators
+ * @package    Webiators_BuyNowButton
+ * @author     Webiators Team
+ * @copyright  Copyright (c) Webiators Technologies Private Limited. ( https://store.webiators.com/ ).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="webiators" sortOrder="1" translate="label">
+			<label>Webiators</label>
+		</tab>
+		<section id="buy_now_button" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+			<label>Buy Now Button</label>
+			<tab>webiators</tab>
+			<resource>Webiators_BuyNowButton::config_webiators_buynowbutton</resource>
+			<group id="general" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<label>General Settings</label>
+				<field id="enable" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+					<label>Enable Module</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+
+				<field id="enable_on_product_page" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label" type="select">
+					<label>Enable For Product Page</label>
+					<comment><![CDATA[You can enable/disable buy now button on product page.]]></comment>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<depends>
+                        <field id="enable">1</field>
+                    </depends>
+				</field>
+
+
+				<field id="enable_on_list_page" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label" type="select">
+					<label>Enable For Category Page</label>
+					<comment><![CDATA[You can enable/disable buy now button on category/list page.]]></comment>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<depends>
+                        <field id="enable">1</field>
+                    </depends>
+				</field>
+
+				<field id="product_button_label" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="40" translate="label" type="text">
+					<label>Button Label</label>
+					<validate>validate-length maximum-length-30 required-entry</validate>
+					<comment><![CDATA[You can set the label for buy now button.]]></comment>
+					 <depends>
+                        <field id="enable">1</field>
+                    </depends>
+				</field>
+
+				<field id="buynowbtn_bg_color_option" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Background Color</label>
+					<comment><![CDATA[You can change the background color of buy now button.]]></comment>
+					<frontend_model>Webiators\BuyNowButton\Block\Color</frontend_model> <!-- Our block for attaching color picker to text box -->
+					<depends>
+                        <field id="enable">1</field>
+                    </depends>
+				</field>
+
+				<field id="buynowbtn_text_color_option" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Text Color</label>
+					<comment><![CDATA[You can change the text color of buy now button.]]></comment>
+					<frontend_model>Webiators\BuyNowButton\Block\Color</frontend_model> <!-- Our block for attaching color picker to text box -->
+					<depends>
+                        <field id="enable">1</field>
+                    </depends>
+				</field>
+
+				<field id="buynowbtn_border_color_option" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Button Border Color</label>
+					<comment><![CDATA[You can change the border color of buy now button.]]></comment>
+					<frontend_model>Webiators\BuyNowButton\Block\Color</frontend_model> <!-- Our block for attaching color picker to text box -->
+					<depends>
+                        <field id="enable">1</field>
+                    </depends>
+				</field>
+
+			</group>
+		</section>
+	</system>
+</config>

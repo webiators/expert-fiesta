@@ -1,0 +1,51 @@
+<?php
+/**
+ * @category   Webiators
+ * @package    Webiators_BuyNowButton
+ * @author     Webiators Team
+ * @copyright  Copyright (c) Webiators Technologies Private Limited. ( https://store.webiators.com ).
+ */
+?>
+<?php
+/** @var \Webiators\BuyNowButton\Block\Product\ListProduct $block */
+$product = $block->getProduct();
+?>
+<?php $helper = $this->helper('Webiators\BuyNowButton\Helper\Data');
+
+    $buyNowbtnLabel = $helper->getButtonLabel();
+    $buyNowBtnBgColor = $helper->getBuyNowButtonBgColorOption();
+    $buyNowBtnTxtColor = $helper->getBuyNowButtonTextColorOption();
+    $buyNowBtnBorderColor = $helper->getBuyNowButtonBorderColorOption();
+?>
+
+<?php if($helper->isBuyNowButtonEnabled()): ?>
+<?php if($helper->isBuyNowButtonForListEnabled()): ?>
+<?php if ($product->isSaleable()): ?>
+    <?php $postParams = $block->getPostParamsAddToCart($product); ?>
+    <div class="buynow-btn">
+        <form action="<?= $block->escapeUrl($postParams['action']); ?>"
+              id="product_addtocart_form_<?= /* @noEscape */ $postParams['data']['product']; ?>"
+              method="post">
+            <input type="hidden"
+                   name="product"
+                   value="<?= /* @noEscape */ $postParams['data']['product']; ?>">
+            <input type="hidden"
+                   name="uenc"
+                   value="<?= /* @noEscape */ $postParams['data']['uenc']; ?>">
+            <?= $block->getBlockHtml('formkey') ?>
+            
+            <button type="submit" title="<?= $block->escapeHtml(__($buyNowbtnLabel)) ?>" id="wt-buy-now-btn" class="action primary wt-buy-now-btn  " style="background: <?php echo'#'.$buyNowBtnBgColor; ?>; color: <?php echo'#'.$buyNowBtnTxtColor; ?> ; border-color: <?php echo'#'.$buyNowBtnBorderColor; ?>"; 
+            data-mage-init='
+                    {
+                        "Webiators_BuyNowButton/js/buy-now-btn": {
+                            "form": "#product_addtocart_form_<?= $block->escapeHtml($postParams['data']['product']) ?>"
+                        }
+                    }
+                '>
+                <span><?= $block->escapeHtml(__($buyNowbtnLabel)) ?></span>
+            </button>
+        </form>
+    </div>
+<?php endif; ?>
+<?php endif; ?>
+<?php endif; ?>

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ *
+ * @category   Webiators
+ * @package    Webiators_BuyNowButton
+ * @author     Webiators Team
+ * @copyright  Copyright (c) Webiators Technologies Private Limited. ( https://store.webiators.com ).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<buy_now_button>
+			<general>
+				<enable>0</enable>
+				<enable_on_product_page>0</enable_on_product_page>
+				<enable_on_list_page>0</enable_on_list_page>
+				<product_button_label>Buy Now</product_button_label>
+				<buynowbtn_bg_color_option>006BB4</buynowbtn_bg_color_option>
+				<buynowbtn_text_color_option>FFFFFF</buynowbtn_text_color_option>
+				<buynowbtn_border_color_option>006BB4</buynowbtn_border_color_option>
+			</general>
+		</buy_now_button>
+	</default>
+</config>

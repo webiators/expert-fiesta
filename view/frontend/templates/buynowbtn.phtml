@@ -1,0 +1,38 @@
+<?php
+/**
+ * @category   Webiators
+ * @package    Webiators_BuyNowButton
+ * @author     Webiators Team
+ * @copyright  Copyright (c) Webiators Technologies Private Limited. ( https://store.webiators.com ).
+ */
+?>
+<?php /** @var \Magento\Catalog\Block\Product\View $block */ ?>
+
+<?php $helper = $this->helper('Webiators\BuyNowButton\Helper\Data');
+	// $formId = $helper->getAddToCartFormId();
+	$buyNowbtnLabel = $helper->getButtonLabel();
+    $buyNowBtnBgColor = $helper->getBuyNowButtonBgColorOption();
+    $buyNowBtnTxtColor = $helper->getBuyNowButtonTextColorOption();
+    $buyNowBtnBorderColor = $helper->getBuyNowButtonBorderColorOption();
+?>
+
+
+
+<?php if($helper->isBuyNowButtonEnabled()): ?>
+    <?php if($helper->isBuyNowButtonForProductEnabled()): ?>
+        <div class="buynow-button">
+            <button type="submit" title="<?= $block->escapeHtml(__($buyNowbtnLabel)) ?>" id="wt-buy-now-btn" class="action primary wt-buy-now-btn  " style="background: <?php echo'#'.$buyNowBtnBgColor; ?>; color: <?php echo'#'.$buyNowBtnTxtColor; ?> ; border-color: <?php echo'#'.$buyNowBtnBorderColor; ?>"; 
+                data-mage-init='
+                {
+                    "Webiators_BuyNowButton/js/buy-now-btn": {
+                    
+                    "form": "#product_addtocart_form"
+                }
+            }
+            '>
+            <span><?= $block->escapeHtml(__($buyNowbtnLabel)) ?></span>
+        </button>
+    </div>
+
+<?php endif; ?>
+<?php endif; ?>

@@ -1,0 +1,26 @@
+.catalog-product-view button#wt-buy-now-btn {
+    margin-right: 0px;
+    width: 45%;
+    line-height: 3.6rem;
+}
+
+.catalog-product-view button#product-addtocart-button {
+    float: left;
+}
+
+@media(max-width:767px){
+	.catalog-product-view button#wt-buy-now-btn {
+    margin-right: 0px;
+    width: 100%;
+    line-height: 3.6rem;
+}
+
+}
+
+.catalog-category-view button#wt-buy-now-btn{
+	margin-left: 5px;
+    margin-top: 36px;
+    width: 50;
+    height: 35px;
+    border-radius: 0px;
+}

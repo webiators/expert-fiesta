@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * @category   Webiators
+ * @package    Webiators_BuyNowButton
+ * @author     Webiators Team
+ * @copyright  Copyright (c) Webiators Technologies Private Limited. ( https://store.webiators.com ).
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+    <css src="Webiators_BuyNowButton::css/buynowbtn.css"/>
+  </head>
+     <body>
+        <referenceBlock name="product.info.addtocart">
+            <block class="Magento\Catalog\Block\Product\View" name="product.buynow" template="Webiators_BuyNowButton::buynowbtn.phtml" before="-"/>
+        </referenceBlock>
+        <referenceBlock name="product.info.addtocart.additional">
+            <block class="Magento\Catalog\Block\Product\View" name="product.buynow.config" template="Webiators_BuyNowButton::buynowbtn.phtml" before="-" />
+        </referenceBlock>
+    </body>
+</page>

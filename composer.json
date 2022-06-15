@@ -1,0 +1,19 @@
+{
+    "name": "webiators/module-buynowbutton",
+    "description": "Buy Now Button extension by Webiators allows store admin to automatically register guest buyers as customers without forcing the users to log in or register for checkout.",
+    "require": {},
+    "type": "magento2-module",
+    "version": "1.0.1",
+     "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Webiators\\BuyNowButton\\": ""
+        }
+    }
+}
